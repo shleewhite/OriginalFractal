@@ -1,6 +1,6 @@
 public void setup()
 {
-  size(500, 500);
+  size(1000, 1000);
   noLoop();
 }
 public void draw()
@@ -23,12 +23,12 @@ public void draw()
   rotate(-PI/4);
   myFractal(-5, -5, 150);
   popMatrix();
-  pushMatrix();                        //first row far right
+  pushMatrix();                        //first row second from the right
   translate(235, 0);
   rotate(-PI/4);
   myFractal(0, 0, 150);
   popMatrix();
-  pushMatrix();                        //first row second from the right
+  pushMatrix();                        //first row far right
   translate(93, -35);
   rotate(-PI/4);
   myFractal(-150, -100, 150);
@@ -44,13 +44,30 @@ public void draw()
   myFractal(-75, -75, 150);
   popMatrix();
   pushMatrix();                        //third row far right
-  translate(-50, 350);
+  translate(125, 500);
   rotate(-PI/4);
   myFractal(-500, 200, 150);
+  popMatrix();
+  pushMatrix();                        //third row second from the right
+  translate(410, 960);
+  rotate(-PI/4);
+  myFractal(-150, -100, 150);
+  popMatrix();
+  pushMatrix();                        //third row third from the right
+  translate(660, 995);
+  rotate(-PI/4);
+  myFractal(-75, -75, 150);
+  popMatrix();
+  pushMatrix();                        //third row far left
+  translate(980, 995);
+  rotate(-PI/4);
+  myFractal(-75, -75, 150);
   popMatrix();
 }
 public void myFractal(int x, int y, int siz)
 {
+   if (siz % 2 == 0){fill(0, 255, 185);}
+   else{fill(220, 65, 255);}
    rect(x - siz/2, y + siz, siz/2, siz/2);//lower left
    rect(x + siz, y - siz/2, siz/2, siz/2); //upper right
    rect(x + siz, y + siz, siz/2, siz/2); //lower right
@@ -62,5 +79,4 @@ public void myFractal(int x, int y, int siz)
     myFractal(x + siz, y + siz, siz/2);
     myFractal(x - siz/2, y - siz/2, siz/2);
   }
- 
 }
